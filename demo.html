@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+    <link rel="stylesheet" href="./theme/index.css">
+    <style>
+        .el-col {
+            margin-bottom: 16px;
+        }
+
+        .flex {
+            position: fixed;
+            top: 10vh;
+            right: 1vh;
+        }
+
+        .flex .el-radio-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <section>
+            <h4>Button</h4>
+            <el-row>
+                <el-col>
+                    <el-button>Default</el-button>
+                    <el-button type="primary" :size="size">Primary</el-button>
+                    <el-button type="success" :size="size">Success</el-button>
+                    <el-button type="warning" :size="size">Warning</el-button>
+                    <el-button type="Danger" :size="size">Danger</el-button>
+                    <el-button type="info" :size="size">Info</el-button>
+                </el-col>
+                <el-col>
+                    <el-button plain>Plain</el-button>
+                    <el-button type="primary" plain :size="size">Primary</el-button>
+                    <el-button type="success" plain :size="size">Success</el-button>
+                    <el-button type="warning" plain :size="size">Warning</el-button>
+                    <el-button type="Danger" plain :size="size">Danger</el-button>
+                    <el-button type="info" plain :size="size">Info</el-button>
+                </el-col>
+                <el-col>
+                    <el-button plain>Round</el-button>
+                    <el-button type="primary" round :size="size">Primary</el-button>
+                    <el-button type="success" round :size="size">Success</el-button>
+                    <el-button type="warning" round :size="size">Warning</el-button>
+                    <el-button type="Danger" round :size="size">Danger</el-button>
+                    <el-button type="info" round :size="size">Info</el-button>
+                </el-col>
+            </el-row>
+        </section>
+        <section>
+            <h4>Radio</h4>
+        </section>
+        <div class="flex">
+            <h4>Size</h4>
+            <el-radio-group v-model="size">
+                <el-radio label="medium">Medium</el-radio>
+                <el-radio label="small">Small</el-radio>
+                <el-radio label="mini">Mini</el-radio>
+            </el-radio-group>
+        </div>
+    </div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return { visible: false, size: 'small' }
+        }
+    })
+</script>
+
+</html>
